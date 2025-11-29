@@ -1,0 +1,216 @@
+/* Resetowanie stylów dla wszystkich elementów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ogólne ustawienia czcionki i koloru tekstu */
+html {
+    font-family: "Noto Sans", roboto, sans-serif;
+    color: #222;
+    font-size: 12px;
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-size: 14px;  /* Zwiększenie czcionki w body */
+    background-color: #998DAA;
+    background: linear-gradient(135deg, #8c7aa0, #a99abf);
+}
+
+/* Kontener strony regulaminu */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.07); 
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(167, 115, 255, 0.25);
+}
+
+/* Nagłówki */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 36px;  /* Zwiększenie czcionki w nagłówkach */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #F0E6FF;
+    margin-top: 30px;
+    font-size: 1.5em;  /* Zwiększenie czcionki h2 */
+}
+
+/* Tekst paragrafów */
+p {
+    margin: 10px 0;
+    font-size: 1.2em;  /* Zwiększenie czcionki w paragrafach */
+    color: #F3E8FF;  /* Kolor tekstu */
+    line-height: 1.6;
+}
+
+/* Wyróżnienie ważnych elementów */
+strong {
+    font-weight: bold;
+}
+
+/* Linki */
+.regulamin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 10px 22px;
+    background: rgba(67, 12, 139, 0.35);
+    color: #E4D7FF;
+    border-radius: 10px;
+    transition: 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.regulamin-link:hover {
+    background: rgba(67, 12, 139, 0.6);
+    transform: translateX(4px);
+    color: #ffffff;
+}
+
+.back-link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+}
+
+.back-link::before {
+    content: "⟵";
+    font-size: 20px;
+}
+
+.back-container {
+    margin-bottom: 40px;   /* odstęp działa na 100% */
+    margin-left: 40px;
+}
+
+.back-link {
+    color: #E4D7FF;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Stopka */
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    font-family: "Noto Sans", roboto, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+
+    /* identyczne tło jak przycisków w nawigacji */
+    background: rgba(67, 12, 139, 0.35);
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+
+    /* delikatne zaokrąglenie jak w nav (od góry nie będzie widać) */
+    border-radius: 14px 14px 0 0;
+}
+
+/* Intro */
+.intro {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro h2 {
+    color: #ffffff;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Usunięcie efektów podświetlania */
+.intro:hover p {
+    text-shadow: none;  /* Usunięcie podświetlania przy hoverze */
+}
+
+.intro:hover h2 {
+    -webkit-text-stroke: none;  /* Usunięcie efektu obramowania przy hoverze */
+}
+
+.intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(130deg, #EAD7FF, #C9A7FF, #EAD7FF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .footer {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+
+    .intro {
+        padding: 20px;
+    }
+
+    .regulamin-link {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .regulamin-link {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
